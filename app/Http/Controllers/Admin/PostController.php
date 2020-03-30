@@ -23,9 +23,24 @@ class PostController extends Controller
     public function create() {
       return view('create');
     }
+
     public function store(Request $request) {
       ($request->content);
-      $post= Post::create(['user_id'=>Auth::id(),'content'=>$request->content]);
+      $post = Post::create(['user_id'=>Auth::id(),'content'=>$request->content]);
       return redirect()->route('home.show', $post);
+    }
+
+    public function edit(Post $post) {
+      return view('edit', compact('post'));
+    }
+
+    public function update (Request $request, Post $post) {
+      $post->update($request->all());
+      return redirect()->route('home.show',compact('post'));
+    }
+
+    public function delete (Post $post) {
+      $post->delete();
+      return redirect()->route('home');
     }
 }
