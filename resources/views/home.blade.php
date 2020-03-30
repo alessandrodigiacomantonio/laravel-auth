@@ -9,12 +9,12 @@
                     Posts
                   </h2>
                 @foreach ($posts as $post)
-                  <div class="card-body" style="box-shadow:2px 2px 5px darkgrey;margin-top:20px;cursor:pointer;">
-                    @foreach ($post->getAttributes() as $key => $value)
-                      <h3>{{$key}}</h3>
-                      <p>{{$value}}</p>
-                    @endforeach
-                  </div>
+                  <a href="{{ route('home.show', $post) }}" class="card-body" style="box-shadow:2px 2px 5px darkgrey;margin-top:20px;text-decoration:none;color:darkgrey;display:block">
+                      @foreach ($post->getAttributes() as $key => $value)
+                        <h3>{{$key}}</h3>
+                        <p>{{$value}}</p>
+                      @endforeach
+                  </a>
                 @endforeach
                 </div>
             </div>

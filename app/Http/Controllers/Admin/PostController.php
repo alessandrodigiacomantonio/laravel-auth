@@ -25,7 +25,7 @@ class PostController extends Controller
     }
     public function store(Request $request) {
       ($request->content);
-      Post::create(['user_id'=>Auth::id(),'content'=>$request->content]);
-      return redirect()->route('home');
+      $post= Post::create(['user_id'=>Auth::id(),'content'=>$request->content]);
+      return redirect()->route('home.show', $post);
     }
 }
