@@ -30,5 +30,6 @@ Route::name('admin.')->prefix('admin')->namespace('Admin')->middleware('auth')->
  Route::post('posts/post_{post}/edit', 'PostController@edit')->name('posts.edit');
  Route::post('posts/post_{post}', 'PostController@update')->name('posts.update');
  Route::delete('posts/post_{post}', 'PostController@delete')->name('posts.delete');
+ Route::get('posts','PostController@showPosts')->name('posts.show_posts');
 }
 );

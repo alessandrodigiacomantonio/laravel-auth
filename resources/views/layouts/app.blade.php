@@ -59,6 +59,9 @@
                                     <a class="dropdown-item" href="{{ route('admin.posts.create') }}">
                                         {{ __('Crea Nuovo Post') }}
                                     </a>
+                                    <a class="dropdown-item" href="{{ route('admin.posts.show_posts') }}">
+                                        {{ __('Visualizza i tuoi Posts') }}
+                                    </a>
                                   @endif
                                     <a class="dropdown-item" href="{{ route('logout') }}"
                                        onclick="event.preventDefault();

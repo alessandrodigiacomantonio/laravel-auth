@@ -7,7 +7,7 @@
           @csrf
           <div class="form-group">
             <label for="content">Inserisci il contenuto del post</label>
-            <textarea rows="5" class="form-control" id="content" name="content" autfocus required>
+            <textarea rows="8" class="form-control" id="content" name="content" autfocus required>
               {{$post->content}}
             </textarea>
           </div>

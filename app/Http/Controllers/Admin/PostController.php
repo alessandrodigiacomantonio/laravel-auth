@@ -5,6 +5,7 @@ namespace App\Http\Controllers\Admin;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Post;
+use App\User;
 use Auth;
 
 // $now = getdate(time()+3600);
@@ -42,5 +43,10 @@ class PostController extends Controller
     public function delete (Post $post) {
       $post->delete();
       return redirect()->route('home');
+    }
+
+    public function showPosts() {
+      $posts = Auth::user()->postsTable;
+      return view('admin.show_posts', compact('posts'));
     }
 }
