@@ -21,7 +21,7 @@ use Auth;
 class PostController extends Controller
 {
     public function create() {
-      return view('create');
+      return view('admin.create');
     }
 
     public function store(Request $request) {
@@ -31,7 +31,7 @@ class PostController extends Controller
     }
 
     public function edit(Post $post) {
-      return view('edit', compact('post'));
+      return view('admin.edit', compact('post'));
     }
 
     public function update (Request $request, Post $post) {
