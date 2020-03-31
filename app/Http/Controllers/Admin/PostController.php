@@ -43,6 +43,7 @@ class PostController extends Controller
 
     public function update (Request $request, Post $post) {
       $post->update($request->all());
+      $post->tags()->sync($request->tags);
       return redirect()->route('home.show',compact('post'));
     }
 
