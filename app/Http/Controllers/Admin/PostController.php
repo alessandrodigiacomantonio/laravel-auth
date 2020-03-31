@@ -34,7 +34,11 @@ class PostController extends Controller
     }
 
     public function edit(Post $post) {
-      return view('admin.edit', compact('post'));
+      $data = [
+        'post' => $post,
+        'tags' => Tag::all(),
+      ];
+      return view('admin.edit', $data);
     }
 
     public function update (Request $request, Post $post) {
