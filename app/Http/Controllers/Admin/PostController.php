@@ -48,6 +48,7 @@ class PostController extends Controller
     }
 
     public function delete (Post $post) {
+      $post->tags()->detach();
       $post->delete();
       return redirect()->route('home');
     }

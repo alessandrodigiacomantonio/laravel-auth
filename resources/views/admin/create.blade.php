@@ -13,7 +13,7 @@
           <div class="form-group justify-content-center" style="flex-direction:column;">
             @foreach ($tags as $tag)
               <div class="ajeje_brazzorf d-flex justify-content-between align-items-center">
-                <label for="tags-checklist" style="margin-right:20px;">{{$tag->theme}}</label>
+                <label for="tags-checklist" style="margin-right:20px;text-transform:capitalize;">{{$tag->theme}}</label>
                 <input id="tags-checklist" type="checkbox" name="tags[]" value="{{$tag->id}}">
               </div>
             @endforeach
