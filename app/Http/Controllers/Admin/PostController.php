@@ -6,6 +6,7 @@ use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use App\Post;
 use App\User;
+use App\Tag;
 use Auth;
 
 // $now = getdate(time()+3600);
@@ -22,12 +23,13 @@ use Auth;
 class PostController extends Controller
 {
     public function create() {
-      return view('admin.create');
+      $tags = Tag::all();
+      return view('admin.create', compact('tags'));
     }
 
     public function store(Request $request) {
-      ($request->content);
       $post = Post::create(['user_id'=>Auth::id(),'content'=>$request->content]);
+      $post->tags()->attach($request->tags);
       return redirect()->route('home.show', $post);
     }
 

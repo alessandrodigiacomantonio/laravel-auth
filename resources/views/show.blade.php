@@ -14,6 +14,16 @@
                         <h3>{{$key}}</h3>
                         <p>{{$value}}</p>
                       @endforeach
+                        <div class="ajeje_brazzorf" style="margin-bottom:40px;">
+                          <h4>
+                            Tags
+                          </h4>
+                          @foreach ($post->tags as $tag)
+                          <span style="display:inline-block;margin-right:20px;box-shadow:1px 1px 5px darkgrey;border-radius:8px;padding: 10px; background-color: tan;color:linen;text-transform:capitalize;">
+                            {{ $tag->theme }}
+                          </span>
+                          @endforeach
+                        </div>
                     </div>
                   </div>
               </div>
@@ -35,6 +45,16 @@
                         <h3>{{$key}}</h3>
                         <p>{{$value}}</p>
                       @endforeach
+                      <div class="ajeje_brazzorf" style="margin-bottom:40px;">
+                        <h4>
+                          Tags
+                        </h4>
+                        @foreach ($post->tags as $tag)
+                        <span style="display:inline-block;margin-right:20px;box-shadow:1px 1px 5px darkgrey;border-radius:8px;padding: 10px; background-color: tan;color:linen;text-transform:capitalize;">
+                          {{ $tag->theme }}
+                        </span>
+                        @endforeach
+                      </div>
                         @if (Auth::user()->privilege == 'admin')
                           <form style="display:inline-block;margin-right:20px;box-shadow:2px 2px 5px darkgrey;border-radius:5px;" action="{{ route('admin.posts.edit', $post) }}" method="post">
                             @csrf
