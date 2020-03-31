@@ -9,7 +9,7 @@
                     Posts
                   </h2>
                 @foreach ($posts as $post)
-                  <a href="{{ route('home.show', $post) }}" class="card-body" style="box-shadow:2px 2px 5px darkgrey;margin-top:20px;text-decoration:none;color:darkgrey;display:block">
+                  <a href="{{ route('home.show', $post) }}" class="card-body" style="box-shadow:2px 2px 5px darkgrey;margin-top:20px;text-decoration:none;color:darkgrey;display:block" hover="color:red" onmouseover="this.style.color='black'" onmouseout="this.style.color='darkgrey'">
                       @foreach ($post->getAttributes() as $key => $value)
                         <h3>{{$key}}</h3>
                         <p>{{$value}}</p>

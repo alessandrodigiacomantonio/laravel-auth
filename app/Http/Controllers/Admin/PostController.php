@@ -46,7 +46,7 @@ class PostController extends Controller
     }
 
     public function showPosts() {
-      $posts = Auth::user()->postsTable;
+      $posts = Auth::user()->post;
       return view('admin.show_posts', compact('posts'));
     }
 }

@@ -9,9 +9,11 @@ class Post extends Model
     protected $fillable = [
       'user_id',
       'content',
-      'updated_at',
     ];
-    public function usersTable() {
+    public function user() {
       return $this->belongsTo('App\User');
+    }
+    public function tag() {
+      return $this->belongsToMany('App\User');
     }
 }
